@@ -1,0 +1,21 @@
+The time complexity of the predict function can be analyzed as follows:
+
+Initializing an empty list yHat takes O(1) time.
+
+The for loop that iterates over xFeat has a time complexity of O(m), where m is the number of samples in xFeat.
+
+Inside the for loop, the euclidean_distance function is called, which computes the Euclidean distance between two arrays. The time complexity of this function is O(d * m), where d is the number of features in each sample.
+
+The np.argsort function is called to sort the distances, which has a time complexity of O(m * log(m)).
+
+The ind array is sliced to get the k nearest neighbors, which takes O(k).
+
+The for loop that iterates over self.y_train[df[0]] has a time complexity of O(k).
+
+In the worst case, the if statement will be executed once for each sample in xFeat, which takes O(m) time.
+
+Appending a value to yHat takes O(1) time.
+
+Putting it all together, the overall time complexity of the predict function is O(m * (d + log(m) + k + 1)). 
+
+The overall time complexity will be O(m*(d+log(m)))

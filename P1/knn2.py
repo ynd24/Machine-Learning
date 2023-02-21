@@ -76,7 +76,7 @@ class Knn(object):
                
                 x += r
             
-            if x >=2:
+            if x >= (self.k/2):
                 yHat.append(1)
             else:
                 yHat.append(0)
